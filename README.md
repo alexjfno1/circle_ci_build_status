@@ -1,26 +1,24 @@
 # CircleCiBuildStatus
 
-TODO: Write a gem description
+A CLI that will get the build status of your project.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install the gem
 
 ```ruby
-gem 'circle_ci_build_status'
+gem install circle_ci_build_status
 ```
 
-And then execute:
+Export your Circle CI token in your .bash_profile
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install circle_ci_build_status
+```bash
+export CIRCLE_CI_TOKEN=<token value>
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Run ```build``` in the root of your project.
 
 ## Contributing
 
