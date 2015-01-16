@@ -18,7 +18,7 @@ export CIRCLE_CI_TOKEN=<token value>
 
 ## Usage
 
-Run ```build``` in the root of your project.
+Run ```build status``` in the root of your project.
 
 ## Contributing
 

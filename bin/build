@@ -2,4 +2,8 @@
 
 require "circle_ci_build_status"
 
+if ARGV[0] != "status"
+  puts "\nUsage: build status\n\n"
+  exit
+end
 CircleCiBuildStatus::Build.new.status
