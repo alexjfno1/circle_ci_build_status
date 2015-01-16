@@ -17,7 +17,7 @@ module CircleCiBuildStatus
     private
 
     def build_circle_ci_url
-      "https://circleci.com/gh/bskyb-commerce/#{project_name}/tree/#{current_branch}.cc.xml?circle-token=#{ENV["CIRCLE_CI_TOKEN"]}"
+      "https://circleci.com/gh/#{ENV["GITHUB_USER"]}/#{project_name}/tree/#{current_branch}.cc.xml?circle-token=#{ENV["CIRCLE_CI_TOKEN"]}"
     end
 
     def project_details

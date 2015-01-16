@@ -10,10 +10,11 @@ Install the gem
 gem install circle_ci_build_status
 ```
 
-Export your Circle CI token in your .bash_profile
+Export your Circle CI token and your Github handle in your .bash_profile
 
 ```bash
 export CIRCLE_CI_TOKEN=<token value>
+export GITHUB_NAME=<github name>
 ```
 
 ## Usage
