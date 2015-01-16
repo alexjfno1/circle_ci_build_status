@@ -2,4 +2,4 @@
 
 require "circle_ci_build_status"
 
-CircleCiBuildStatus::Build.status
+CircleCiBuildStatus::Build.new.status
