@@ -1,0 +1,5 @@
+#!/urs/bin/env ruby
+
+require "circle_ci_build_status"
+
+CircleCiBuildStatus::Build.status

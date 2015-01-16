@@ -1,5 +1,9 @@
 require "circle_ci_build_status/version"
 
 module CircleCiBuildStatus
-  # Your code goes here...
+  class Build
+    def self.status
+      puts "hello world"
+    end
+  end
 end
