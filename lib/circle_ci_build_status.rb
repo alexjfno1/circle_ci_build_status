@@ -9,7 +9,9 @@ module CircleCiBuildStatus
 
   class Build
     def status
-      print_status(project_details["Projects"]["Project"]["@lastBuildStatus"])
+      build_status = project_details["Projects"]["Project"]["@lastBuildStatus"]
+      activity = project_details["Projects"]["Project"]["@activity"]
+      print_status(build_status, activity)
     rescue ProjectNotFound
       print_error
     end
@@ -34,16 +36,24 @@ module CircleCiBuildStatus
       (`git rev-parse --abbrev-ref HEAD`).strip
     end
 
-    def print_status(status)
+    def print_status(status, activity)
+      if(activity == "Building")
+        status = "In progress".blue
+      elsif(status == "Success")
+        status = status.green
+      else
+        status = status.red
+      end
+
       puts
-      puts "Project: " + project_name.cyan
-      puts "Branch: " + current_branch.yellow
-      puts "Build Status: " + status.green
+      puts "Project: #{project_name.cyan}"
+      puts "Branch: #{current_branch.yellow}"
+      puts "Build Status: #{status}"
       puts
     end
 
     def print_error
-      puts "\nWe can't seem to find the " + "#{project_name}".cyan + " project with the branch " + "#{current_branch}".yellow + " on Circle CI\n\n"
+      puts "\nWe can't seem to find the #{project_name.cyan} project with the branch #{current_branch.yellow} on Circle CI\n\n"
     end
   end
 end
