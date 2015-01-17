@@ -14,6 +14,8 @@ module CircleCiBuildStatus
       print_status(build_status, activity)
     rescue ProjectNotFound
       print_error
+    rescue Faraday::ConnectionFailed
+      puts "\nSorry, we failed to get a connection.\n".red
     end
 
     private
