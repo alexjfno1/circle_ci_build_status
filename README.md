@@ -14,7 +14,7 @@ Export your Circle CI token and your Github handle in your .bash_profile
 
 ```bash
 export CIRCLE_CI_TOKEN=<token value>
-export GITHUB_USER=<github user>
+export GITHUB_USER=<github user> #i.e. the name of the user or organisation that the repo is under. 
 ```
 
 ## Usage
